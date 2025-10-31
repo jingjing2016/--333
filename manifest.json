@@ -4,9 +4,12 @@
   "version": "1.0",
   "description": "Copies LLM responses to the clipboard automatically.",
   "permissions": [
-    "activeTab",
+    "storage",
     "clipboardWrite"
   ],
+  "action": {
+    "default_popup": "settings.html"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -14,6 +17,16 @@
       ],
       "js": [
         "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "chatgpt.js"
+      ],
+      "matches": [
+        "https://chatgpt.com/*"
       ]
     }
   ]
