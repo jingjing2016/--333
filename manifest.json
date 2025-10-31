@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "LLM Response Copier",
+  "version": "1.0",
+  "description": "Copies LLM responses to the clipboard automatically.",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
